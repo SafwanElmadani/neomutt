@@ -1,0 +1,18 @@
+# MS Office & OpenDocument files (handled by LibreOffice)
+application/msword; libreoffice --view %s
+application/vnd.ms-excel; libreoffice --view %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice --view %s
+application/vnd.oasis.opendocument.text; libreoffice --view %s
+
+# HTML (open in Brave instead of w3m)
+text/html; brave-browser %s
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+
+text/plain; nvim %s
+
+# PDFs (Flatpak Okular)
+application/pdf; flatpak run org.kde.okular %s
+
+#Images
+image/png; /usr/bin/feh %s
+image/jpeg; /usr/bin/feh %s

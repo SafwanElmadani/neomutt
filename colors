@@ -1,0 +1,5 @@
+# vim: filetype=muttrc
+
+color status green default
+# in general, the order is:
+# color <element> <color> <attr> optional<regex>
