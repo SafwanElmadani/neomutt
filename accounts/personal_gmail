@@ -1,4 +1,6 @@
 # vim: filetype=muttrc
+#
+unmailboxes *
 
 # User
 set from = "safwanelmadani@gmail.com"

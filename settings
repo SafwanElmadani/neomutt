@@ -55,3 +55,7 @@ bind index,pager \CK sidebar-prev
 bind index,pager \CJ sidebar-next
 bind index,pager \CE sidebar-open
 bind index,pager B sidebar-toggle-visible
+
+
+set query_command = "khard email --parsable --search-in-source-files '%s'"
+
