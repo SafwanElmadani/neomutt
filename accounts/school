@@ -1,33 +1,4 @@
 # vim: filetype=muttrc
-unmailboxes *
-
-# in/out mail servers
-set realname = "Safwan Elmadani"
-set imap_pass = "SOME_PASSWORD"
-set smtp_url = "smtps://you@somedomain.com@mailserver.com:465"
-set smtp_pass = "SOME_PASSWORD"
-set folder = "imaps://you@somedomain.com@mailserver.com:993"
-set spoolfile = "+INBOX"
-
-set from = "you@somedomain.com"
-set envelope_from
-set use_from = "yes"
-set record = "+Sent"
-set trash = "+Trash"
-set postponed = "+Drafts"
-set mail_check = 6
-
-# Allow Mutt to open a new IMAP connection automatically.
-unset imap_passive
-
-# Keep the IMAP connection alive by polling intermittently (time in seconds).
-set imap_keepalive = 300
-
-## Hook -- IMPORTANT!
-account-hook $folder "set imap_pass=SOME_PASSWORD"
-
-
-# vim: filetype=muttrc
 #
 unmailboxes *'
 
@@ -68,15 +39,18 @@ auto_view application/pgp-encrypted
 set from = "safwanelmadani@arizona.edu"
 set realname = "Safwan Elmadani"
 
-# Gmail
 set imap_user = "safwanelmadani@arizona.edu"
-set smtp_url = "smtps://safwanelmadani@arizona.edu@smtp-mail.outlook.com:587"
-##################################
-####### not finished ###########
-set smtp_authenticators = 'gssapi:login'
+set folder="imap://outlook.office365.com/"
+set smtp_url="smtp://${imap_user}@smtp.office365.com:587/"
+set imap_authenticators="oauthbearer:xoauth2"
+set imap_oauth_refresh_command="/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/email-token"
+
+set smtp_authenticators=${imap_authenticators}
+set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
+
 # set imap_pass = ""
 # set smtp_pass = ""
-source "gpg -dq $XDG_CONFIG_HOME/neomutt/gmail.pw.gpg |"
+# source "gpg -dq $XDG_CONFIG_HOME/neomutt/gmail.pw.gpg |"
 
 # Ensure TLS is enforced
 set ssl_starttls = yes
@@ -84,25 +58,26 @@ set ssl_force_tls = yes
 
 # My mailboxes
 # Base folder is the IMAP server root
-set folder = "imaps://imap.gmail.com:993/"
+# set folder = "imaps://imap.gmail.com:993/"
+
 
 # Inbox is at the root
 set spoolfile = "+INBOX"
 
 # Gmail special folders
-set postponed = "+[Gmail]/Drafts"
-set record    = "+[Gmail]/Sent Mail"
-set trash     = "+[Gmail]/Trash"
+# set postponed = "+[Gmail]/Drafts"
+# set record    = "+[Gmail]/Sent Mail"
+# set trash     = "+[Gmail]/Trash"
 
 # Mailboxes to show / cycle through
-mailboxes = +INBOX \
-            "+[Gmail]/All Mail" \
-            "+[Gmail]/Important" \
-            "+[Gmail]/Starred" \
-            "+[Gmail]/Drafts" \
-            "+[Gmail]/Sent Mail" \
-            "+[Gmail]/Spam" \
-            "+[Gmail]/Trash"
+mailboxes = +INBOX #\
+            # "+[Gmail]/All Mail" \
+            # "+[Gmail]/Important" \
+            # "+[Gmail]/Starred" \
+            # "+[Gmail]/Drafts" \
+            # "+[Gmail]/Sent Mail" \
+            # "+[Gmail]/Spam" \
+            # "+[Gmail]/Trash"
 
 # Where to put the stuff
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
@@ -110,4 +85,4 @@ set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
 set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
 unset record
 
-set signature = "~/.config/neomutt/accounts/signatures/gmail"
+# set signature = "~/.config/neomutt/accounts/signatures/gmail"
