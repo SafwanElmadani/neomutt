@@ -25,3 +25,89 @@ set imap_keepalive = 300
 
 ## Hook -- IMPORTANT!
 account-hook $folder "set imap_pass=SOME_PASSWORD"
+
+
+# vim: filetype=muttrc
+#
+unmailboxes *'
+
+#GPG stuff
+# Use GPGME
+# my key for signing and encrypting
+set pgp_default_key = 422E736E7009A001C1E359333E9926C8B481E234
+
+# Use GPGME
+set crypt_use_gpgme = yes
+
+# Automatically sign all out-going email
+# set crypt_autosign = yes
+
+# Sign replies to signed emails
+set crypt_replysign = yes
+
+# Encrypt replies to encrypted emails
+set crypt_replyencrypt = yes
+
+# Encrypt and sign replies to encrypted and signed email
+set crypt_replysignencrypted = yes
+
+# Attempt to verify signatures automatically
+set crypt_verify_sig = yes
+
+# Attempt to encrypt automatically, if possible
+# I would recommend setting this to no as university often have spam filters
+# And this will cause your emails to be marked as spam
+# as they can't decrypt your emails LMAO
+set crypt_opportunistic_encrypt = no
+
+# So you can view encrypted emails automatically
+auto_view application/pgp-encrypted
+
+
+# User
+set from = "safwanelmadani@arizona.edu"
+set realname = "Safwan Elmadani"
+
+# Gmail
+set imap_user = "safwanelmadani@arizona.edu"
+set smtp_url = "smtps://safwanelmadani@arizona.edu@smtp-mail.outlook.com:587"
+##################################
+####### not finished ###########
+set smtp_authenticators = 'gssapi:login'
+# set imap_pass = ""
+# set smtp_pass = ""
+source "gpg -dq $XDG_CONFIG_HOME/neomutt/gmail.pw.gpg |"
+
+# Ensure TLS is enforced
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# My mailboxes
+# Base folder is the IMAP server root
+set folder = "imaps://imap.gmail.com:993/"
+
+# Inbox is at the root
+set spoolfile = "+INBOX"
+
+# Gmail special folders
+set postponed = "+[Gmail]/Drafts"
+set record    = "+[Gmail]/Sent Mail"
+set trash     = "+[Gmail]/Trash"
+
+# Mailboxes to show / cycle through
+mailboxes = +INBOX \
+            "+[Gmail]/All Mail" \
+            "+[Gmail]/Important" \
+            "+[Gmail]/Starred" \
+            "+[Gmail]/Drafts" \
+            "+[Gmail]/Sent Mail" \
+            "+[Gmail]/Spam" \
+            "+[Gmail]/Trash"
+
+# Where to put the stuff
+set header_cache = "$XDG_CACHE_HOME/mutt/headers"
+set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
+set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
+unset record
+
+set signature = "~/.config/neomutt/accounts/signatures/gmail"

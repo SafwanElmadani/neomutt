@@ -1,6 +1,39 @@
 # vim: filetype=muttrc
 #
-unmailboxes *
+unmailboxes *'
+
+#GPG stuff
+# Use GPGME
+# my key for signing and encrypting
+set pgp_default_key = 422E736E7009A001C1E359333E9926C8B481E234
+
+# Use GPGME
+set crypt_use_gpgme = yes
+
+# Automatically sign all out-going email
+# set crypt_autosign = yes
+
+# Sign replies to signed emails
+set crypt_replysign = yes
+
+# Encrypt replies to encrypted emails
+set crypt_replyencrypt = yes
+
+# Encrypt and sign replies to encrypted and signed email
+set crypt_replysignencrypted = yes
+
+# Attempt to verify signatures automatically
+set crypt_verify_sig = yes
+
+# Attempt to encrypt automatically, if possible
+# I would recommend setting this to no as university often have spam filters
+# And this will cause your emails to be marked as spam
+# as they can't decrypt your emails LMAO
+set crypt_opportunistic_encrypt = no
+
+# So you can view encrypted emails automatically
+auto_view application/pgp-encrypted
+
 
 # User
 set from = "safwanelmadani@gmail.com"
@@ -10,8 +43,9 @@ set realname = "Safwan Elmadani"
 set imap_user = "safwanelmadani@gmail.com"
 set smtp_url = "smtps://safwanelmadani@gmail.com@smtp.gmail.com:465/"
 set smtp_authenticators = 'gssapi:login'
-set imap_pass = "htrc wpst zqwy omvc"
-set smtp_pass = "htrc wpst zqwy omvc"
+# set imap_pass = ""
+# set smtp_pass = ""
+source "gpg -dq $XDG_CONFIG_HOME/neomutt/gmail.pw.gpg |"
 
 # Ensure TLS is enforced
 set ssl_starttls = yes
