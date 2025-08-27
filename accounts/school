@@ -43,7 +43,7 @@ set imap_user = "safwanelmadani@arizona.edu"
 set folder="imap://outlook.office365.com/"
 set smtp_url="smtp://${imap_user}@smtp.office365.com:587/"
 set imap_authenticators="oauthbearer:xoauth2"
-set imap_oauth_refresh_command="/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/email-token"
+set imap_oauth_refresh_command="/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/safwanelmadani@arizona.edu-token"
 
 set smtp_authenticators=${imap_authenticators}
 set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
