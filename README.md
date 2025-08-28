@@ -3,8 +3,8 @@
 ## Packages:
     - neomutt
     - khard
-    - isync
-    - msmtp
+    - isync --  for accessing emails
+    - msmtp -- for sending emails
     - pass
     - lynx
     - notmuch

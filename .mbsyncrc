@@ -1,0 +1,35 @@
+# === Outlook School ===
+IMAPAccount arizona
+# Address to connect to
+Host outlook.office365.com
+User safwanelmadani@arizona.edu
+# Use TLS
+TLSType IMAPS
+AuthMechs *
+# PassCmd must print ONLY the access token to stdout
+PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/safwanelmadani@arizona.edu-token"
+
+IMAPStore arizona-remote
+Account arizona
+
+MaildirStore arizona-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/Documents/mail/arizona/
+Inbox ~/Documents/mail/arizona/Inbox
+
+Channel arizona
+Far :arizona-remote:
+Near :arizona-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+# Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+# Or include everything
+Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Sync the movement of messages between folders and deletions, add after making sure the sync works
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+# === Outlook work ===

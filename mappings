@@ -29,3 +29,6 @@ macro index,pager P \
 
 # Email completion bindings
 bind editor <Tab> complete-query
+
+bind index,pager <F5> imap-fetch-mail
+
