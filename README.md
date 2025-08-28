@@ -4,6 +4,7 @@
     - neomutt
     - khard
     - isync --  for accessing emails
+        -  cyrus-sasl-xoauth2-git -- needed for 2Auth
     - msmtp -- for sending emails
     - pass
     - lynx

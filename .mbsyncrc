@@ -5,7 +5,7 @@ Host outlook.office365.com
 User safwanelmadani@arizona.edu
 # Use TLS
 TLSType IMAPS
-AuthMechs *
+AuthMechs XOAUTH2
 # PassCmd must print ONLY the access token to stdout
 PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/safwanelmadani@arizona.edu-token"
 
