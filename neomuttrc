@@ -18,5 +18,5 @@ folder-hook $folder 'source ~/.config/neomutt/accounts/school_isync_msmtp'
 # source ~/.config/neomutt/accounts/main
 # folder-hook $folder 'source ~/.config/neomutt/accounts/main'
 
-# source ~/.config/neomutt/accounts/personal_gmail
-# folder-hook $folder 'source ~/.config/neomutt/accounts/personal_gmail'
+source ~/.config/neomutt/accounts/personal_gmail
+folder-hook $folder 'source ~/.config/neomutt/accounts/personal_gmail'

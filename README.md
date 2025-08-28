@@ -1,15 +1,19 @@
 # neomutt
 
 ## Packages:
-    - neomutt
-    - khard
-    - isync --  for accessing emails
-        -  cyrus-sasl-xoauth2-git -- needed for 2Auth
-    - msmtp -- for sending emails
-    - pass
-    - lynx
-    - notmuch
-    - urlview
+- neomutt
+- khard
+- isync --  for accessing emails
+    -  cyrus-sasl-xoauth2-git -- needed for 2Auth
+        - https://github.com/moriyoshi/cyrus-sasl-xoauth2
+            - installed manually in fedora
+            - make sure to change the install location in Makefile.am for `pkglibdir` to `${CYRUS_SASL_PREFIX}/lib64/sasl2`
+        
+- msmtp -- for sending emails
+- pass
+- lynx
+- notmuch
+- urlview
 
 ## Encryption
 - using gpg

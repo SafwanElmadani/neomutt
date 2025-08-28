@@ -80,3 +80,6 @@ set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
 unset record
 
 set signature = "~/.config/neomutt/accounts/signatures/gmail"
+
+color status     brightgreen    blue
+

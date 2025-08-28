@@ -32,3 +32,6 @@ bind editor <Tab> complete-query
 
 bind index,pager <F5> imap-fetch-mail
 
+set wait_key = no
+# macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
+macro index,pager G "<shell-escape>mbsync -a >/dev/null 2>&1 && notify-send 'NeoMutt' 'Mail sync complete' &<enter><sync-mailbox><enter>" "Get mail"

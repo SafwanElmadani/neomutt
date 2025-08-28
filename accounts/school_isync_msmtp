@@ -39,40 +39,20 @@ auto_view application/pgp-encrypted
 set from = "safwanelmadani@arizona.edu"
 set realname = "Safwan Elmadani"
 
-# set imap_user = "safwanelmadani@arizona.edu"
-# set folder="imap://outlook.office365.com/"
-# set smtp_url="smtp://${imap_user}@smtp.office365.com:587/"
-# set imap_authenticators="oauthbearer:xoauth2"
-# set imap_oauth_refresh_command="/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/safwanelmadani@arizona.edu-token"
-#
-# set smtp_authenticators=${imap_authenticators}
-# set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
-#
-# # set imap_pass = ""
-# # set smtp_pass = ""
-# # source "gpg -dq $XDG_CONFIG_HOME/neomutt/gmail.pw.gpg |"
-#
-# # Ensure TLS is enforced
-# set ssl_starttls = yes
-# set ssl_force_tls = yes
-#
-# My mailboxes
-# Base folder is the IMAP server root
-# set folder = "imaps://imap.gmail.com:993/"
+set sendmail = "msmtp --account=arizona"
 
 # My mailboxes
 set mbox_type = Maildir
-set folder = "~/Documents/mail"
+set folder = "~/Documents/mail/arizona/"
 
-set spoolfile = "+arizona/Inbox"
-mailboxes +arizona/Inbox +"arizona/Sent Items" +"arizona/Drafts" +"arizona/Archive" \
-            +"arizona/Deleted Items"
-
+set spoolfile = "+Inbox"
+mailboxes +Inbox +"Sent Items" +"Drafts" +"Archive" \
+            +"Deleted Items"
 
 # Gmail special folders
-set postponed = "+arizona/Drafts"
-set record    = "+arizona/Sent Items"
-set trash     = "+arizona/Deleted Items"
+set postponed = +Drafts
+set record    = +Sent\ Items
+set trash     = +Deleted\ Items
 
 # Where to put the stuff
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
@@ -80,5 +60,8 @@ set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
 set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
 unset record
 
-# set signature = "~/.config/neomutt/accounts/signatures/gmail"
+set signature = "~/.config/neomutt/accounts/signatures/arizona"
+
+# macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
+# neomutt will not wait for a key after the command finishes.
 
