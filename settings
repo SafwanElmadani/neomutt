@@ -33,6 +33,10 @@ set text_flowed=yes                  # correct indentation for plain text
 unset sig_dashes                     # no dashes before sig
 unset markers
 
+# show local date/time
+#set date_format="%Y-%m-%d %H:%M"   # your preferred strftime format
+#set index_format="%4C %Z %[%Y-%m-%d %H:%M] %s"
+
 # Sort by newest conversation first.
 set charset = "utf-8"
 set uncollapse_jump

@@ -33,3 +33,34 @@ Expunge Both
 SyncState *
 
 # === Outlook work ===
+IMAPAccount work
+# Address to connect to
+Host 127.0.0.1
+Port 1143
+User safwanelmadani@ibm.com
+PassCmd "pass work/email"
+SSLType None
+AuthMechs LOGIN
+# Increase timeout to avoid o365 IMAP hiccups
+Timeout 120
+PipelineDepth 50
+
+IMAPStore work-remote
+Account work
+
+MaildirStore work-local
+# Copy folder hierarchy
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/Documents/mail/work/
+Inbox ~/Documents/mail/work/Inbox
+
+Channel work
+Far :work-remote:
+Near :work-local:
+# Include everything
+Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
