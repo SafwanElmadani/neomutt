@@ -41,3 +41,8 @@
         - list: pass list
         - show: pass work/email
             - add this in neomutt
+
+## davmail
+- the launch script set a size of 512M for the heap.
+- need to change that to something lager, I used `-Xmx4096m` 4GB
+- copied the script from `/usr/bin/davmail` and changed my version

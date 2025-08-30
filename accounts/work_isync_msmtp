@@ -46,13 +46,13 @@ set mbox_type = Maildir
 set folder = "~/Documents/mail/work/"
 
 set spoolfile = "+Inbox"
-mailboxes +Inbox +"Sent Items" +"Drafts" +"Archive" \
-            +"Deleted Items"
+mailboxes +Inbox +"Sent" +"Drafts" +"Archive" \
+            +"Trash"
 
 # Gmail special folders
 set postponed = +Drafts
-set record    = +Sent\ Items
-set trash     = +Deleted\ Items
+set record    = +Sent
+set trash     = +Trash
 
 # Where to put the stuff
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
