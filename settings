@@ -34,9 +34,8 @@ unset sig_dashes                     # no dashes before sig
 unset markers
 
 # show local date/time
-#set date_format="%Y-%m-%d %H:%M"   # your preferred strftime format
-#set index_format="%4C %Z %[%Y-%m-%d %H:%M] %s"
-set index_format="%4C %Z %{%Y-%m-%d %H:%M} %-15.15L (%4c) %s"
+# https://neomutt.org/guide/reference.html#index-format
+set index_format="%4C %Z %[%Y-%m-%d %H:%M] %-30.30L (%4c) %s"
 
 # Sort by newest conversation first.
 set charset = "utf-8"

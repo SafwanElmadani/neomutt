@@ -47,4 +47,4 @@ unset record
 
 set signature = "~/.config/neomutt/accounts/signatures/gmail"
 
-macro index,pager G "<sync-mailbox><enter>" "Get mail"
+macro index,pager R "<sync-mailbox><change-folder>!<enter>" "Full refresh and get mail"

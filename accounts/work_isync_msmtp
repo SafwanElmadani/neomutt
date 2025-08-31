@@ -31,5 +31,5 @@ set signature = "~/.config/neomutt/accounts/signatures/work"
 
 # macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
 # neomutt will not wait for a key after the command finishes.
-macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter><shell-escape>notify-send 'NeoMutt' 'Mail sync complete'<enter>" "Get mail"
+macro index,pager R "<shell-escape>mbsync -a<enter><sync-mailbox><enter><shell-escape>notify-send 'NeoMutt' 'Mail sync complete'<enter>" "Get mail"
 

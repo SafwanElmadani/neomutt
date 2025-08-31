@@ -34,5 +34,5 @@ bind index,pager <F5> imap-fetch-mail
 
 # set wait_key = no
 # macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
-macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter><shell-escape>notify-send 'NeoMutt' 'Mail sync complete'<enter>" "Get mail"
+# macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter><shell-escape>notify-send 'NeoMutt' 'Mail sync complete'<enter>" "Get mail"
 
