@@ -2,39 +2,6 @@
 #
 unmailboxes *'
 
-#GPG stuff
-# Use GPGME
-# my key for signing and encrypting
-set pgp_default_key = 422E736E7009A001C1E359333E9926C8B481E234
-
-# Use GPGME
-set crypt_use_gpgme = yes
-
-# Automatically sign all out-going email
-# set crypt_autosign = yes
-
-# Sign replies to signed emails
-set crypt_replysign = yes
-
-# Encrypt replies to encrypted emails
-set crypt_replyencrypt = yes
-
-# Encrypt and sign replies to encrypted and signed email
-set crypt_replysignencrypted = yes
-
-# Attempt to verify signatures automatically
-set crypt_verify_sig = yes
-
-# Attempt to encrypt automatically, if possible
-# I would recommend setting this to no as university often have spam filters
-# And this will cause your emails to be marked as spam
-# as they can't decrypt your emails LMAO
-set crypt_opportunistic_encrypt = no
-
-# So you can view encrypted emails automatically
-auto_view application/pgp-encrypted
-
-
 # User
 set from = "safwanelmadani@arizona.edu"
 set realname = "Safwan Elmadani"

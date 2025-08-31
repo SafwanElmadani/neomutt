@@ -36,6 +36,7 @@ unset markers
 # show local date/time
 #set date_format="%Y-%m-%d %H:%M"   # your preferred strftime format
 #set index_format="%4C %Z %[%Y-%m-%d %H:%M] %s"
+set index_format="%4C %Z %{%Y-%m-%d %H:%M} %-15.15L (%4c) %s"
 
 # Sort by newest conversation first.
 set charset = "utf-8"

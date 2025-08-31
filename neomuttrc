@@ -9,8 +9,6 @@ source ~/.config/neomutt/mappings
 # source ~/.config/neomutt/accounts/gmail
 # folder-hook $folder 'source ~/.config/neomutt/accounts/gmail'
 
-# source ~/.config/neomutt/accounts/school_isync_msmtp
-# folder-hook $folder 'source ~/.config/neomutt/accounts/school_isync_msmtp'
 
 # source ~/.config/neomutt/accounts/school
 # folder-hook $folder 'source ~/.config/neomutt/accounts/school'
@@ -18,8 +16,17 @@ source ~/.config/neomutt/mappings
 # source ~/.config/neomutt/accounts/main
 # folder-hook $folder 'source ~/.config/neomutt/accounts/main'
 
-# source ~/.config/neomutt/accounts/personal_gmail
-# folder-hook $folder 'source ~/.config/neomutt/accounts/personal_gmail'
+source ~/.config/neomutt/accounts/personal_gmail
+folder-hook $folder 'source ~/.config/neomutt/accounts/personal_gmail'
+#
+source ~/.config/neomutt/accounts/school_isync_msmtp
+folder-hook '~/Documents/mail/arizona' 'source ~/.config/neomutt/accounts/school_isync_msmtp'
 
-source ~/.config/neomutt/accounts/work_isync_msmtp
-folder-hook $folder 'source ~/.config/neomutt/accounts/work_isync_msmtp'
+# source ~/.config/neomutt/accounts/work_isync_msmtp
+folder-hook '~/Documents/mail/work' 'source ~/.config/neomutt/accounts/work_isync_msmtp'
+
+# Macros to switch accounts
+macro index,pager <f2> "<enter-command>source ~/.config/neomutt/accounts/work_isync_msmtp<enter><sync-mailbox><change-folder>!<enter>"
+macro index,pager <f3> "<enter-command>source ~/.config/neomutt/accounts/school_isync_msmtp<enter><sync-mailbox><change-folder>!<enter>"
+macro index,pager <f4> "<enter-command>source ~/.config/neomutt/accounts/personal_gmail<enter><sync-mailbox><change-folder>!<enter>"
+

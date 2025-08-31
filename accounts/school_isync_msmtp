@@ -2,39 +2,6 @@
 #
 unmailboxes *'
 
-#GPG stuff
-# Use GPGME
-# my key for signing and encrypting
-set pgp_default_key = 422E736E7009A001C1E359333E9926C8B481E234
-
-# Use GPGME
-set crypt_use_gpgme = yes
-
-# Automatically sign all out-going email
-# set crypt_autosign = yes
-
-# Sign replies to signed emails
-set crypt_replysign = yes
-
-# Encrypt replies to encrypted emails
-set crypt_replyencrypt = yes
-
-# Encrypt and sign replies to encrypted and signed email
-set crypt_replysignencrypted = yes
-
-# Attempt to verify signatures automatically
-set crypt_verify_sig = yes
-
-# Attempt to encrypt automatically, if possible
-# I would recommend setting this to no as university often have spam filters
-# And this will cause your emails to be marked as spam
-# as they can't decrypt your emails LMAO
-set crypt_opportunistic_encrypt = no
-
-# So you can view encrypted emails automatically
-auto_view application/pgp-encrypted
-
-
 # User
 set from = "safwanelmadani@arizona.edu"
 set realname = "Safwan Elmadani"
@@ -43,16 +10,16 @@ set sendmail = "msmtp --account=arizona"
 
 # My mailboxes
 set mbox_type = Maildir
-set folder = "~/Documents/mail/arizona/"
+set folder = "~/Documents/mail/"
 
-set spoolfile = "+Inbox"
-mailboxes +Inbox +"Sent Items" +"Drafts" +"Archive" \
-            +"Deleted Items"
+set spoolfile = "+arizona/Inbox"
+mailboxes +arizona/Inbox +"arizona/Sent Items" +"arizona/Drafts" +"arizona/Archive" \
+            +"arizona/Deleted Items"
 
 # Gmail special folders
-set postponed = +Drafts
-set record    = +Sent\ Items
-set trash     = +Deleted\ Items
+set postponed = +arizona/Drafts
+set record    = +arizona/Sent\ Items
+set trash     = +arizona/Deleted\ Items
 
 # Where to put the stuff
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
@@ -64,4 +31,4 @@ set signature = "~/.config/neomutt/accounts/signatures/arizona"
 
 # macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
 # neomutt will not wait for a key after the command finishes.
-
+macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter><shell-escape>notify-send 'NeoMutt' 'Mail sync complete'<enter>" "Get mail"
