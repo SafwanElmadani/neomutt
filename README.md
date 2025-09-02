@@ -65,3 +65,6 @@ bind editor <Tab> complete-query
 - link the tagging script: `ln -s /home/safwan/.config/neomutt/.notmuch/hooks/post-new` in `/home/safwan/Documents/mail/.notmuch/hooks`
 - run `notmuch new`
 
+## khard
+- clone the repo in github in .config
+
