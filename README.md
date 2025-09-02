@@ -62,4 +62,6 @@ bind editor <Tab> complete-query
 - create a config
 - to create one run, `notmuch setup`. This will create one in ~/.notmuch-config
     - will ask you for the location of the mail
+- link the tagging script: `ln -s /home/safwan/.config/neomutt/.notmuch/hooks/post-new` in `/home/safwan/Documents/mail/.notmuch/hooks`
 - run `notmuch new`
+
