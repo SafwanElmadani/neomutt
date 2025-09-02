@@ -65,3 +65,38 @@ Create Both
 # Save the synchronization state files in the relevant directory
 SyncState *
 
+# === personal gmail ===
+# skipping for now cuz large size
+#IMAPAccount gmail
+## Address to connect to
+#Host imap.gmail.com
+#User safwanelmadani@gmail.com
+## Use TLS
+#SSLType IMAPS
+#AuthMechs LOGIN
+## PassCmd must print ONLY the access token to stdout
+#PassCmd "pass personal/gmail"
+#
+#IMAPStore gmail-remote
+#Account gmail
+#
+#MaildirStore gmail-local
+#SubFolders Verbatim
+## The trailing "/" is important
+#Path ~/Documents/mail/gmail/
+#Inbox ~/Documents/mail/gmail/INBOX
+#
+#Channel gmail
+#Far :gmail-remote:
+#Near :gmail-local:
+## Exclude everything under the internal [Gmail] folder, except the interesting folders
+## Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+## Or include everything
+#Patterns *
+## Automatically create missing mailboxes, both locally and on the server
+#Create Both
+## Sync the movement of messages between folders and deletions, add after making sure the sync works
+#Expunge Both
+## Save the synchronization state files in the relevant directory
+#SyncState *
+

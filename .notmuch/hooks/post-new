@@ -1,0 +1,5 @@
+#!/bin/sh
+# this file should be create at path_of_the_database/.notmuch/hooks
+# man notmuch-search-terms for detials
+notmuch tag +arizona -- path:"arizona/**"
+notmuch tag +work -- path:"work/**"

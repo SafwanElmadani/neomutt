@@ -47,3 +47,19 @@
 - need to change that to something lager, I used `-Xmx4096m` 4GB
 - copied the script from `/usr/bin/davmail` and changed my version
 - davmail.properties should be added to ~/.config/davmail because it store refresh token.
+
+#  Contacts for abook if you want to use it instead of khard
+
+# When looking for contacts, use this command
+set query_command= "abook --mutt-query '%s'"
+# Add current sender to address book
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+# Auto-complete email addresses by pushing tab
+bind editor <Tab> complete-query
+
+
+## notmuch 
+- create a config
+- to create one run, `notmuch setup`. This will create one in ~/.notmuch-config
+    - will ask you for the location of the mail
+- run `notmuch new`

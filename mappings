@@ -22,7 +22,7 @@ bind attach,index g noop
 bind attach,index gg first-entry
 bind attach,index G  last-entry
 
-# Press A to add contact to Khard address book
+# Press P to add contact to Khard address book
 macro index,pager P \
     "<pipe-message>khard add-email<return>" \
     "add the sender email address to khard"
