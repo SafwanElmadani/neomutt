@@ -43,7 +43,6 @@ mailboxes = +INBOX \
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
 set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
 set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
-unset record
 
 set signature = "~/.config/neomutt/accounts/signatures/gmail"
 

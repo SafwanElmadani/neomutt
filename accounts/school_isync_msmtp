@@ -25,7 +25,6 @@ set trash     = +arizona/Deleted\ Items
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
 set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
 set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
-unset record
 
 set signature = "~/.config/neomutt/accounts/signatures/arizona"
 
@@ -42,6 +41,9 @@ virtual-mailboxes "Arizona Today" "notmuch://?query=tag:arizona and date:today"
 virtual-mailboxes "Arizona Unread" "notmuch://?query=tag:arizona and tag:unread"
 
 macro index c "<change-vfolder>?" "Change to vfolder overview"
+
+set nm_record = yes
+set nm_record_tags = "-inbox,sent,me"
 
 # Makes notmuch return threads rather than messages
 set nm_query_type = "threads"
