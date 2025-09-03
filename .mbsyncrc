@@ -43,7 +43,7 @@ SSLType None
 AuthMechs LOGIN
 # Increase timeout to avoid o365 IMAP hiccups
 Timeout 120
-PipelineDepth 50
+PipelineDepth 10
 
 IMAPStore work-remote
 Account work
