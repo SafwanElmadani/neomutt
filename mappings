@@ -1,8 +1,10 @@
 # vim: filetype=muttrc
 
-macro index A \
-    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
-    "mark all new as read"
+# macro index A \
+#     "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
+#     "mark all new as read"
+macro index A "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "Mark all messages as read"
+
 
 bind index j next-entry
 bind index k previous-entry

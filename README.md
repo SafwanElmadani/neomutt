@@ -68,3 +68,10 @@ bind editor <Tab> complete-query
 ## khard
 - clone the repo in github in .config
 
+
+## useful commands:
+- Mark unread messages, then toggle the unread flag on marked messages.
+    - https://unix.stackexchange.com/questions/372139/macro-for-mutt-to-mark-the-whole-folder-as-read
+    - T ~O | ~N
+    - ;N
+
