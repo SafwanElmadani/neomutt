@@ -46,4 +46,4 @@ set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
 
 set signature = "~/.config/neomutt/accounts/signatures/gmail"
 
-macro index,pager R "<sync-mailbox><change-folder>!<enter>" "Full refresh and get mail"
+macro index,pager <F5> "<sync-mailbox><change-folder>!<enter>" "Full refresh and get mail"

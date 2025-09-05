@@ -61,5 +61,7 @@ bind index,pager \CE sidebar-open
 bind index,pager B sidebar-toggle-visible
 
 
-set query_command = "khard email --parsable --search-in-source-files '%s'"
+# When looking for contacts, use this command
+# set query_command = "khard email --parsable --search-in-source-files '%s'"
+set query_command= "abook --mutt-query '%s'"
 

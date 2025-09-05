@@ -24,15 +24,19 @@ bind attach,index g noop
 bind attach,index gg first-entry
 bind attach,index G  last-entry
 
+# Reply to all recipients
+bind index,pager R group-reply
+
 # Press P to add contact to Khard address book
-macro index,pager P \
-    "<pipe-message>khard add-email<return>" \
-    "add the sender email address to khard"
+# macro index,pager P \
+#     "<pipe-message>khard add-email<return>" \
+#     "add the sender email address to khard"
 
-# Email completion bindings
+# Add current sender to address book
+macro index,pager P "<pipe-message>abook --add-email<return>" "Add this sender to Abook"
+
+# Auto-complete email addresses by pushing tab
 bind editor <Tab> complete-query
-
-bind index,pager <F5> imap-fetch-mail
 
 # set wait_key = no
 # macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
