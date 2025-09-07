@@ -15,6 +15,39 @@
 - notmuch
 - urlview
 
+## outlook tokens
+### arizona
+- use /usr/share/neomutt/oauth2/mutt_oauth2.py script to generate the token
+    - it comes with neomutt package
+- ```sh
+    /usr/share/neomutt/oauth2/mutt_oauth2.py \                                
+        -v \
+        -t \
+        --authorize \
+        --client-id "9e5f94bc-e8a4-4e73-b8be-63364c29d753" \
+        --client-secret "" \
+        --email "safwanelmadani@arizona.edu" \
+        --provider microsoft \
+        /home/safwan/.config/neomutt/safwanelmadani@arizona.edu-token
+  ```
+  - the client-id in the above command is for thunderbird
+  - then use `PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py /home/safwan/.config/neomutt/safwanelmadani@arizona.edu-token"` in the isync (.mbsyncrc) instead of PW
+### ibm
+- `davmail` will handle the tokens
+    - copy `davmail.properties` from this repo into `/home/safwan/.config/davmail`
+        - the launch script set a size of 512M for the heap.
+        - need to change that to something lager, I used `-Xmx4096m` 4GB
+        - copied the script from `/usr/bin/davmail` and changed my version
+    - then run: /home/safwan/.config/davmail/davmail ~/.config/davmail/davmail.properties 
+    - config (isync) mbsync to the same config in this repo 
+    - same for msmtp config
+    - one you run `mbsync -V work`, you will see an authentication prompt in your davmail terminal
+    - Copy and paste the provided URL into your web browser, and you will be presented with an Office365 login screen, or possibly with a blank white screen if you are already authenticated with Office365 in your browser. If you don't get a white screen right away, complete your sign on as usual, after which you should get the white screen.
+    -  copy and paste the entire URL from your browser into the davmail
+- If you examine your davmail(1) configuration file again, you should see a new entry called `davmail.oauth.<email>.refreshToken`. This is the token that you retrieved during the manual sign-on process above.
+- If at some point your authentication fails randomly, it is likely that the token has expired, in which case you only need to repeat the above process to get a new token.
+- source: https://douglasrumbaugh.com/post/davmail-authentication/
+
 ## Encryption
 - using gpg
     - create a file with the passwords needed e.g., set imap_pass = "123456789", then encrypt it.
