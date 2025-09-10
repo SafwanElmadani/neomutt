@@ -1,6 +1,32 @@
 # vim: filetype=muttrc
 #
 unmailboxes *'
+# # Enable GPGME backend
+# set crypt_use_gpgme = yes
+#
+# # Default key to use for signing and encryption (use fingerprint or long key ID)
+# set pgp_default_key = `gpg --fingerprint neomutt_id | sed -n '/^\s/s/ //gp'`
+#
+# # Automatically sign outgoing mail
+# set crypt_autosign = yes
+#
+# # Sign replies if the incoming mail is signed
+# set crypt_replysign = yes
+#
+# # Encrypt replies if the incoming mail was encrypted
+# set crypt_replyencrypt = yes
+#
+# # Sign + encrypt replies if incoming mail was signed + encrypted
+# set crypt_replysignencrypted = yes
+#
+# # Verify signatures automatically
+# set crypt_verify_sig = yes
+#
+# # Don’t try opportunistic encryption (avoid spam filter issues)
+# set crypt_opportunistic_encrypt = no
+#
+# # Automatically view encrypted email parts
+# auto_view application/pgp-encrypted
 
 # User
 set from = "safwanelmadani@ibm.com"
