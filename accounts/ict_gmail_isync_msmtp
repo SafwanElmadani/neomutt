@@ -1,0 +1,54 @@
+# vim: filetype=muttrc
+#
+unmailboxes *'
+
+# User
+set from = "safwanelmadani@ictucson.com"
+set realname = "Safwan Elmadani"
+
+set sendmail = "msmtp --account=ict"
+
+# My mailboxes
+set mbox_type = Maildir
+set folder = "~/Documents/mail/"
+
+set spoolfile = "+ict/Inbox"
+mailboxes +ict/Inbox +"ict/Sent Items" +"ict/Drafts" +"ict/Archive" \
+            +"ict/Deleted Items"
+
+# Gmail special folders
+set postponed = +ict/Drafts
+set record    = +ict/Sent\ Items
+set trash     = +ict/Deleted\ Items
+
+# Where to put the stuff
+set header_cache = "$XDG_CACHE_HOME/mutt/headers"
+set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
+set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
+
+set signature = "~/.config/neomutt/accounts/signatures/ict"
+
+# macro index,pager G "<shell-escape>mbsync -a<enter><sync-mailbox><enter>" "Get mail"
+# neomutt will not wait for a key after the command finishes.
+macro index,pager <F5> "<shell-escape>mbsync -V ict && notmuch new<enter><sync-mailbox><enter><shell-escape>notify-send 'NeoMutt' 'Mail sync complete'<enter>" "Get mail"
+
+# All the notmuch settings are documented here: https://neomutt.org/feature/notmuch
+
+# Points to the notmuch directory
+set nm_default_url = "notmuch:///home/safwan/Documents/mail"
+
+virtual-mailboxes "Arizona Today" "notmuch://?query=tag:ict and date:today"
+virtual-mailboxes "Arizona Unread" "notmuch://?query=tag:ict and tag:unread"
+
+macro index c "<change-vfolder>?" "Change to vfolder overview"
+
+set nm_record = yes
+set nm_record_tags = "-inbox,sent,me"
+
+# Makes notmuch return threads rather than messages
+set nm_query_type = "threads"
+# Binding for notmuch search
+# bind index \\ vfolder-from-query
+# ~/.neomuttrc
+macro index \\ "<vfolder-from-query>tag:ict and " "Search mailbox with default tag"
+

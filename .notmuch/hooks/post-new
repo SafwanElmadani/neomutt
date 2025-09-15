@@ -3,3 +3,4 @@
 # man notmuch-search-terms for detials
 notmuch tag +arizona -- path:"arizona/**"
 notmuch tag +work -- path:"work/**"
+notmuch tag +ict -- path:"ict/**"
