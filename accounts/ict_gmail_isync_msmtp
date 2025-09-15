@@ -10,16 +10,25 @@ set sendmail = "msmtp --account=ict"
 
 # My mailboxes
 set mbox_type = Maildir
-set folder = "~/Documents/mail/"
+set folder = "~/Documents/mail/ict/"
 
-set spoolfile = "+ict/Inbox"
-mailboxes +ict/Inbox +"ict/Sent Items" +"ict/Drafts" +"ict/Archive" \
-            +"ict/Deleted Items"
+# Inbox is at the root
+set spoolfile = "+INBOX"
 
 # Gmail special folders
-set postponed = +ict/Drafts
-set record    = +ict/Sent\ Items
-set trash     = +ict/Deleted\ Items
+set postponed = "+[Gmail]/Drafts"
+set record    = "+[Gmail]/Sent Mail"
+set trash     = "+[Gmail]/Trash"
+
+# Mailboxes to show / cycle through
+mailboxes +INBOX \
+          "+[Gmail]/All Mail" \
+          "+[Gmail]/Important" \
+          "+[Gmail]/Starred" \
+          "+[Gmail]/Drafts" \
+          "+[Gmail]/Sent Mail" \
+          "+[Gmail]/Spam" \
+          "+[Gmail]/Trash"
 
 # Where to put the stuff
 set header_cache = "$XDG_CACHE_HOME/mutt/headers"
@@ -37,8 +46,8 @@ macro index,pager <F5> "<shell-escape>mbsync -V ict && notmuch new<enter><sync-m
 # Points to the notmuch directory
 set nm_default_url = "notmuch:///home/safwan/Documents/mail"
 
-virtual-mailboxes "Arizona Today" "notmuch://?query=tag:ict and date:today"
-virtual-mailboxes "Arizona Unread" "notmuch://?query=tag:ict and tag:unread"
+virtual-mailboxes "Ict Today" "notmuch://?query=tag:ict and date:today"
+virtual-mailboxes "Ict Unread" "notmuch://?query=tag:ict and tag:unread"
 
 macro index c "<change-vfolder>?" "Change to vfolder overview"
 
