@@ -1,0 +1,6 @@
+[calendars]
+
+  [[personal]]
+    path = /home/safwan/Documents/calendars/personal/
+    color = dark green
+    priority = 20
