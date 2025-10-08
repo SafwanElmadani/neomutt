@@ -46,4 +46,8 @@ macro index,pager P "<pipe-message>abook --add-email<return>" "Add this sender t
 # macro compose I "<attach-file><shell-escape> tmpfile=$(mktemp --suffix=.png) && wl-paste -t image/png > "$tmpfile" && echo "$tmpfile"<enter><enter>" "attach image from clipboard"
 # macro compose I "<shell-escape>tmpfile=$(mktemp --suffix=.png) && wl-paste -t image/png > \"$tmpfile\" && echo \"$tmpfile\" > /tmp/last_clip\n<attach-file>`cat /tmp/last_clip`<enter>" "attach image from clipboard"
 # macro compose P "<shell-escape>tmpfile=$(mktemp --suffix=.png) && wl-paste -t image/png > \"$tmpfile\" && echo \"$tmpfile\" \n<attach-file>`cat /tmp/last_clip`<enter>" "Attach clipboard image"
+#
+# to open attachment in nvim
+bind attach <Enter> view-mailcap
+bind attach <Return> view-mailcap
 
